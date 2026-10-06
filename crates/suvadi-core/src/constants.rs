@@ -1,3 +1,5 @@
+pub const OHM: char = 'ௐ';
+
 pub const VOWEL_A: char = 'அ';
 pub const VOWEL_AA: char = 'ஆ';
 pub const VOWEL_I: char = 'இ';
@@ -108,7 +110,7 @@ pub const MONTH: &str = "௴";
 pub const YEAR: &str = "௵";
 pub const DEBIT: &str = "௶";
 pub const CREDIT: &str = "௷";
-pub const RUPEE: &str = "ரூ";
+pub const RUPEE: &str = "௹";
 pub const NUMERAL: &str = "௺";
 pub const SRI: &str = "\u{0bb6}\u{0bcd}\u{0bb0}\u{0bc0}"; // #SRI -ஶ்ரீ
 pub const KSHA: &str = "\u{0b95}\u{0bcd}\u{0bb7}"; // #KSHA - க்ஷ
