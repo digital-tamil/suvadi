@@ -1,4 +1,4 @@
-use crate::letters::tamil_letters::*;
+use crate::constants::*;
 
 pub const fn is_tamil_unicode(c: char) -> bool {
     matches!(c, '\u{0B82}'..='\u{0BFA}')

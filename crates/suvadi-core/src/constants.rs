@@ -11,7 +11,7 @@ pub const VOWEL_O: char = 'ஒ';
 pub const VOWEL_OO: char = 'ஓ';
 pub const VOWEL_AU: char = 'ஔ';
 
-pub const AYTHAM_LETTER: char = 'ஃ';
+pub const AYUDHAM_LETTER: char = 'ஃ';
 pub const PULLI: char = '்';
 
 pub const UYIR: [char; 12] = [
@@ -101,3 +101,59 @@ pub const UYIRMEI_LETTERS: [&str; 216] = [
 ];
 
 const COMBINING_SIGNS: [char; 12] = ['்', 'ா', 'ி', 'ீ', 'ு', 'ூ', 'ெ', 'ே', 'ை', 'ொ', 'ோ', 'ௌ'];
+
+pub const UYIRMEI_OFFSET: u8 = 12 + 1 + 18 + 2;
+pub const DAY: &str = "௳";
+pub const MONTH: &str = "௴";
+pub const YEAR: &str = "௵";
+pub const DEBIT: &str = "௶";
+pub const CREDIT: &str = "௷";
+pub const RUPEE: &str = "ரூ";
+pub const NUMERAL: &str = "௺";
+pub const SRI: &str = "\u{0bb6}\u{0bcd}\u{0bb0}\u{0bc0}"; // #SRI -ஶ்ரீ
+pub const KSHA: &str = "\u{0b95}\u{0bcd}\u{0bb7}"; // #KSHA - க்ஷ
+pub const KSH: &str = "\u{0b95}\u{0bcd}\u{0bb7}\u{0bcd}"; // #KSH - க்ஷ்
+pub const INDIAN_RUPEE: &str = "₹";
+pub const TAMIL_SYMBOLS: [&'static str; 11] = [
+    DAY,
+    MONTH,
+    YEAR,
+    DEBIT,
+    CREDIT,
+    RUPEE,
+    NUMERAL,
+    SRI,
+    KSHA,
+    KSH,
+    INDIAN_RUPEE,
+];
+
+pub const fn generate_tamil247() -> [&'static str; 247] {
+    let mut table = [""; 247];
+
+    table[0] = "ஃ";
+
+    let mut i = 0;
+    const UYIR_LETTERS_STR: [&'static str; 12] =
+        ["அ", "ஆ", "இ", "ஈ", "உ", "ஊ", "எ", "ஏ", "ஐ", "ஒ", "ஓ", "ஔ"];
+    while i < UYIR_LETTERS_STR.len() {
+        table[1 + i] = UYIR_LETTERS_STR[i];
+        i += 1;
+    }
+
+    let mut j = 0;
+    while j < MEI_LETTERS.len() {
+        table[1 + UYIR_LETTERS_STR.len() + j] = MEI_LETTERS[j];
+        j += 1;
+    }
+
+    let mut k = 0;
+    while k < UYIRMEI_LETTERS.len() {
+        table[1 + UYIR_LETTERS_STR.len() + MEI_LETTERS.len() + k] = UYIRMEI_LETTERS[k];
+        k += 1;
+    }
+
+    table
+}
+
+pub const tamil247_letters: [&'static str; 247] = generate_tamil247();
