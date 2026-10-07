@@ -218,7 +218,6 @@ pub fn get_tamil_letters_only(x: &str) -> Vec<String> {
     get_letters(x)
         .into_iter()
         .filter(|token| token.chars().any(is_tamil_char))
-        .map(String::from)
         .collect()
 }
 
