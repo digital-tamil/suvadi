@@ -1,5 +1,5 @@
-mod constants;
-mod letters;
+pub mod constants;
+pub mod letters;
 
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
