@@ -1,3 +1,4 @@
+pub mod calculator;
 pub mod constants;
 pub mod letters;
 
